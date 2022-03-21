@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="icon" href="./images/logo.png">
+	<script src="main.js" defer></script>
+	<title>ETCH A SKETCH</title>
+</head>
+<body>
+		<div class="flex-container">
+			<div class="header"><h1>Etch a Sketch</h1></div>
+			<div class="content">
+				<div class="board">	
+				</div>
+				<div class="control-wrapper">
+					<div class="controls flex-column">
+						<button class="hover btn-style" onclick="changeColor('#5d88fb')">DEFAULT COLOR</button>
+						<button class="hover btn-style" onclick="changeColor('random')">RANDOM COLOR</button>
+						<button class="hover btn-style" onclick="changeColor('eraser')">ERASER</button>
+						<button class="hover btn-style" onclick="changeColor('eraser')">RESET</button>
+						<div class="setter">
+							<input 
+							type="text" 
+							placeholder="Size of board" 
+							value=""
+							onchange="changeSize(this.value)" />
+							<button class="btn-style">SET</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
