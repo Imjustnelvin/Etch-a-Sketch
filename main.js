@@ -1,4 +1,5 @@
 let defaultColor = '#5d88fb';
+let draw = false;
 
 function boardSize(size){
 	let board = document.querySelector('.board');
@@ -28,12 +29,14 @@ const changeSize = input => {
 }
 
 function fillColor() {
-	if(defaultColor === 'random')
-	this.style.backgroundColor = `hsl(${Math.floor(Math.random() * 361)}, 100%, 50%)`;
-	else if (defaultColor === 'eraser')
-	this.style.backgroundColor = 'white';
-	else
-	this.style.backgroundColor = defaultColor;
+	if (draw) {
+		if(defaultColor === 'random')
+		this.style.backgroundColor = `hsl(${Math.floor(Math.random() * 361)}, 100%, 50%)`;
+		else if (defaultColor === 'eraser')
+		this.style.backgroundColor = 'white';
+		else
+		this.style.backgroundColor = defaultColor;
+	}
 } 
 
 function changeColor(choice) {
@@ -53,3 +56,14 @@ sizeOutput.innerHTML = slider.value;
 slider.oninput = function() {
 	sizeOutput.innerHTML = this.value;
 }
+
+document.querySelector('.board').addEventListener('click', () => {
+	draw = !draw;
+	const signal = document.querySelector('div.draw-signal')
+
+	if(draw) {
+		signal.style.backgroundColor = '#2eb872';
+	} else {
+		signal.style.backgroundColor = '#f73859';
+	}
+})
