@@ -21,14 +21,17 @@
 						<button class="hover btn-style" onclick="changeColor('random')">RANDOM COLOR</button>
 						<button class="hover btn-style" onclick="changeColor('eraser')">ERASER</button>
 						<button class="hover btn-style" onclick="resetBoard()">RESET</button>
-						<div class="setter">
+						<div class="slidecontainer">
 							<input 
-							type="text" 
-							placeholder="Size of board" 
-							value=""
-							onchange="changeSize(this.value)" />
-							<button class="btn-style">SET</button>
+							type="range" 
+							min="2" 
+							max="100" 
+							value="50" 
+							class="slider" 
+							id="myRange"
+							onchange="changeSize(this.value)">
 						</div>
+						<p style="margin: 0;">SIZE: <span id="output"></span></p>
 					</div>
 				</div>
 			</div>

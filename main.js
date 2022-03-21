@@ -28,19 +28,12 @@ const changeSize = input => {
 }
 
 function fillColor() {
-	if(defaultColor === 'random') 
-	{
-		this.style.backgroundColor = `hsl(${Math.floor(Math.random() * 361)}, 100%, 50%)`;
-	}
+	if(defaultColor === 'random')
+	this.style.backgroundColor = `hsl(${Math.floor(Math.random() * 361)}, 100%, 50%)`;
 	else if (defaultColor === 'eraser')
-	{
-		this.style.backgroundColor = 'white';
-	}
+	this.style.backgroundColor = 'white';
 	else
-	{
-		this.style.backgroundColor = defaultColor;
-	}
-	
+	this.style.backgroundColor = defaultColor;
 } 
 
 function changeColor(choice) {
@@ -51,4 +44,12 @@ function resetBoard() {
 	let board = document.querySelector('.board');
 	let squares = board.querySelectorAll('div');
 	squares.forEach((div) => div.style.backgroundColor = 'white')
+}
+
+let slider = document.getElementById('myRange');
+let sizeOutput = document.getElementById('output')
+sizeOutput.innerHTML = slider.value;
+
+slider.oninput = function() {
+	sizeOutput.innerHTML = this.value;
 }
